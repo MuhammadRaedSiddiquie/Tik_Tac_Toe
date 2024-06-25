@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+background-image: url('bartek-garbowicz-xJeCLqsBUqc-unsplash.jpg');
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 80px;
+position: relative;
+}
+.again{
+    width: 100%;
+    background-color: rgb(0 5 16 / 90%);;
+    position: absolute;
+    height: 100vh;
+    z-index: 2;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+    opacity: 0;
+    animation: again 2s forwards linear;
+    text-align: center;
+}
+@keyframes again{
+    to{
+        opacity: 100%;
+
+    }
+}
+.heading2{
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 60px;
+}
+.btn2{
+    color: #fff;
+    font-size:20px ;
+    font-family: 'Courier New', Courier, monospace;
+    width: 120px;
+    height: 60px;
+    font-weight: 900;
+    background-color: rgb(0 5 16 / 70%);
+    box-shadow: 1px 1px 3px 0px #fff;
+    text-align: center;
+    padding: 6px;
+}
+.heading{
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+}
+.btn{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 23px;
+    font-weight: 900;
+    background-color: rgb(0 5 16 / 70%);
+    box-shadow: 1px 1px 3px 0px #fff;
+    color: white;
+    padding: 15px 35px;
+
+}
+.board{
+   
+    width: 450px;
+    height: 450px;
+    display: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(20%);
+    animation: board 2s forwards linear;
+    border-radius: 5px;
+
+}
+@keyframes board{
+    to{
+        opacity: 100%;
+        transform: scale(100%);
+    }
+}
+.board .tile{
+    width: 150px;
+    height: 150px;
+    background-color: rgb(255 255 255 / 19%);
+    border: 2px solid rgb(255, 255, 255);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+       border-radius: 2px;
+    align-items: center;
+}
+
+
+.close{
+    display: none;
+  
+}
+.open{
+display: flex;
+}
+.fa-xmark,.fa-circle{
+    color: white;
+    font-size: 60px;
+}
+@media(max-width:475px){
+    .board{
+        height: 300px;
+        width: 300px;
+    }
+    .board .tile{
+        width: 100px;
+        height: 100px;
+
+    }
+    .fa-xmark,.fa-circle{
+        font-size: 50px;
+    }
+    .heading{
+        font-size: 40px;
+    }
+    .heading2{
+        font-size: 50px;
+    }
+
+
+}
+
