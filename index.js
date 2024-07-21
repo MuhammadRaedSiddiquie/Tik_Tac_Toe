@@ -1,121 +1,3 @@
-
-// const prompt=require("prompt-sync")({sigint:true}); 
-
-// let a="."
-// let b="."
-// let c="."
-// let d="."
-// let e="."
-// let f="."
-// let g="."
-// let h="."
-// let i="."
-
-
-// let chance=10
-// let fail=''
-// let mylist=["a","b","c","d","e","f","g","h","i"]
-// let user
-// let comp
-// let random
-
-// let box=`
-// a		b		c
-
-
-
-// d		e		f
-
-
-
-// g		h		i
-// `
-
-
-// while(chance>0){
-//     user = prompt("Enter Letter")
-//     random=Math.floor(Math.random()*mylist.length)
-//     comp=mylist[random]
-//     if(user=="a" || user=="b" || user=="c" || user=="d" || user=="e" || user=="f" || user=="g" || user=="f" || user=="i"){
-//         box=box.replace(user,"X")
-//     }
-//     else{
-//         console.log("enter valid letter")
-//     }
-//     box=box.replace(comp,"O")
-//     if(user=="a"){
-//         a=a.replace(".","X")
-//     }
-//     else if(user=="b"){
-//         b=b.replace(".","X")
-//     }
-//     else if(user=="c"){
-//         c=c.replace(".","X")
-//     }
-//     else if(user=="d"){
-//         d=d.replace(".","X")
-//     }
-//     else if(user=="e"){
-//         e=e.replace(".","X")
-//     }
-//     else if(user=="f"){
-//         f=f.replace(".","X")
-//     }
-//     else if(user=="g"){
-//         g=g.replace(".","X")
-//     }
-//     else if(user=="h"){
-//         h=h.replace(".","X")
-//     }
-//     else if(user=="i"){
-//         i=i.replace(".","X")
-//     }
-//     else if(comp=="a"){
-//         a=a.replace(".","O")
-//     }
-//     else if(comp=="b"){
-//         b=b.replace(".","O")
-//     }
-//     else if(comp=="c"){
-//         c=c.replace(".","O")
-//     }
-//     else if(comp=="d"){
-//         d=d.replace(".","O")
-//     }
-//     else if(comp=="e"){
-//         e=e.replace(".","O")
-//     }
-//     else if(comp=="f"){
-//         f=f.replace(".","O")
-//     }
-//     else if(comp=="g"){
-//         g=g.replace(".","O")
-//     }
-//     else if(comp=="h"){
-//         h=h.replace(".","O")
-//     }
-//     else if(comp=="i"){
-//         i=i.replace(".","O")
-//     }
-
-
-//     if  (a =="X" && b=="X" && c=="X" || d =="X" && e=="X" && f=="X" || g =="X" && h=="X" && i=="X" || a =="X" && d=="X" && g=="X" || b =="X" && e=="X" && h=="X" || c =="X" && f=="X" && i=="X" || a =="X" && e=="X" && i=="X" || c =="X" && e=="X" && g=="X"){
-
-//         console.log("YOU WON")
-//         chance=0
-//         break;
-//     }
-//     if  (a =="O" && b=="O" && c=="O" || d =="O" && e=="O" && f=="O" || g =="O" && h=="O" && i=="O" || a =="O" && d=="O" && g=="O" || b =="O" && e=="O" && h=="O" || c =="O" && f=="O" && i=="O" || a =="O" && e=="O" && i=="O" || c =="O" && e=="O" && g=="O"){
-
-//         console.log("YOU LOSE")
-//         chance=0
-//         break;
-//     }
-//     console.log(box)
-//     console.log(comp)
-//     chance-=1
-
-// }
 var body = null;
 
 if (typeof document !== 'undefined') {
@@ -132,10 +14,12 @@ if (typeof document !== 'undefined') {
         document.getElementById('_board').style.display = "none";
 
         mylist = ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
+
         for (let k = 0; k < crossmark.length; k++) {
             crossmark[k].classList.remove('open')
             crossmark[k].classList.add('close')
         }
+
         document.getElementById('circleOne').classList.remove('open')
         document.getElementById('circleOne').classList.add('close')
 
@@ -174,36 +58,32 @@ if (typeof document !== 'undefined') {
         arr[8] = "8"
 
         chance=0
-
     })
 
-
-
-    let a = "0"
-    let b = "1"
-    let c = "2"
-    let d = "3"
-    let e = "4"
-    let f = "5"
-    let g = "6"
-    let h = "7"
-    let i = "8"
-    let arr = [a, b, c, d, e, f, g, h, i]
+    let tileOne = "0"
+    let tileTwo = "1"
+    let tileThree = "2"
+    let tileFour = "3"
+    let tileFive = "4"
+    let tileSix = "5"
+    let tileSeven = "6"
+    let tileEight = "7"
+    let tileNine = "8"
+    let arr = [tileOne,tileTwo,tileThree,tileFour,tileFive,tileSix,tileSeven,tileEight,tileNine]
     let comp
     let random
     let random2
     let mylist = ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
     let timer
     let chance=0
-
-
     let crosstile = window.document.getElementsByClassName('tile')
     let crossmark = document.getElementsByClassName('fa-xmark')
     let circlemark = document.getElementsByClassName('fa-circle')
+
+
     function runGame() {
         random = Math.floor(Math.random() * mylist.length)
         comp = mylist[random]
-        console.log(comp)
 
         if (comp == "0") {
             arr[0] = arr[0].replace("0", "O")
@@ -278,42 +158,23 @@ if (typeof document !== 'undefined') {
             }
         }
 
-
-
         mylist = mylist.filter(e => e !== comp);
 
         for (let j = 0; j < crosstile.length; j++) {
-
-
             crosstile[j].onclick = function (e) {
 
-
-
-
                 if (circlemark[j].classList.contains('close')) {
-
                     let x = arr[j]
                     mylist = mylist.filter(e => e !== x);
-
-
                     arr[j] = arr[j].replace(j, "X")
                     chance+=1
                     mylist = mylist.filter(e => e !== comp);
                     random2 = Math.floor(Math.random() * mylist.length)
-
                     comp = mylist[random2]
 
-
-
-
-
-
-
                     if (circlemark[j].classList.contains('close')) {
-
                         crossmark[j].classList.add('open')
                         crossmark[j].classList.remove('close')
-
                     }
                     if (circlemark[j].classList.contains('close')) {
                         if (comp == "0") {
@@ -321,7 +182,6 @@ if (typeof document !== 'undefined') {
                             chance+=1
                             if (crossmark[0].classList.contains('close')) {
                                 timer = setTimeout(() => {
-
                                     document.getElementById('circleOne').classList.add('open')
                                     document.getElementById('circleOne').classList.remove('close')
                                 }, 1000)
@@ -334,7 +194,6 @@ if (typeof document !== 'undefined') {
                                 timer = setTimeout(() => {
                                     document.getElementById('circleTwo').classList.add('open')
                                     document.getElementById('circleTwo').classList.remove('close')
-
                                 }, 1000)
                             }
                         }
@@ -345,7 +204,6 @@ if (typeof document !== 'undefined') {
                                 timer = setTimeout(() => {
                                     document.getElementById('circleThree').classList.add('open')
                                     document.getElementById('circleThree').classList.remove('close')
-
                                 }, 1000)
                             }
                         }
@@ -356,7 +214,6 @@ if (typeof document !== 'undefined') {
                                 timer = setTimeout(() => {
                                     document.getElementById('circleFour').classList.add('open')
                                     document.getElementById('circleFour').classList.remove('close')
-
                                 }, 1000)
                             }
                         }
@@ -367,7 +224,6 @@ if (typeof document !== 'undefined') {
                                 timer = setTimeout(() => {
                                     document.getElementById('circleFive').classList.add('open')
                                     document.getElementById('circleFive').classList.remove('close')
-
                                 }, 1000)
                             }
                         }
@@ -378,7 +234,6 @@ if (typeof document !== 'undefined') {
                                 timer = setTimeout(() => {
                                     document.getElementById('circleSix').classList.add('open')
                                     document.getElementById('circleSix').classList.remove('close')
-
                                 }, 1000)
                             }
                         }
@@ -389,7 +244,6 @@ if (typeof document !== 'undefined') {
                                 timer = setTimeout(() => {
                                     document.getElementById('circleSeven').classList.add('open')
                                     document.getElementById('circleSeven').classList.remove('close')
-
                                 }, 1000)
                             }
                         }
@@ -400,7 +254,6 @@ if (typeof document !== 'undefined') {
                                 timer = setTimeout(() => {
                                     document.getElementById('circleEight').classList.add('open')
                                     document.getElementById('circleEight').classList.remove('close')
-
                                 }, 1000)
                             }
                         }
@@ -411,37 +264,23 @@ if (typeof document !== 'undefined') {
                                 timer = setTimeout(() => {
                                     document.getElementById('circleNine').classList.add('open')
                                     document.getElementById('circleNine').classList.remove('close')
-
                                 }, 1000)
                             }
                         }
                     }
 
-
-
-                    console.log(arr)
-                    console.log(chance)
-
-
                     if (arr[0] == "X" && arr[1] == "X" && arr[2] == "X" || arr[3] == "X" && arr[4] == "X" && arr[5] == "X" || arr[6] == "X" && arr[7] == "X" && arr[8] == "X" || arr[0] == "X" && arr[3] == "X" && arr[6] == "X" || arr[1] == "X" && arr[4] == "X" && arr[7] == "X" || arr[2] == "X" && arr[5] == "X" && arr[8] == "X" || arr[0] == "X" && arr[4] == "X" && arr[8] == "X" || arr[2] == "X" && arr[4] == "X" && arr[6] == "X") {
-
-
                         clearTimeout(timer)
                         setTimeout(() => {
                             document.getElementById('main_again').style.display = "flex";
                             document.getElementById('again_heading').innerText = "You Won Congo"
-
                         }, 1000)
-
-
                     }
                     else if (arr[0] == "O" && arr[1] == "O" && arr[2] == "O" || arr[3] == "O" && arr[4] == "O" && arr[5] == "O" || arr[6] == "O" && arr[7] == "O" && arr[8] == "O" || arr[0] == "O" && arr[3] == "O" && arr[6] == "O" || arr[1] == "O" && arr[4] == "O" && arr[7] == "O" || arr[2] == "O" && arr[5] == "O" && arr[8] == "O" || arr[0] == "O" && arr[4] == "O" && arr[8] == "O" || arr[2] == "O" && arr[4] == "O" && arr[6] == "O") {
-
                         setTimeout(() => {
                             document.getElementById('main_again').style.display = "flex";
                             document.getElementById('again_heading').innerText = "You Lost Alas"
                         }, 2000)
-
                     }
                     else if(chance>=9){
                          setTimeout(()=>{
@@ -449,62 +288,9 @@ if (typeof document !== 'undefined') {
                             document.getElementById('again_heading').innerText = "Tied"
                          },1000)
                     }
-
-                    switch (true) {
-                        case arr.includes('0'):
-                            console.log("lol")
-                            break;
-                        case arr.includes('1'):
-                            console.log("lol")
-                            break;
-                        case arr.includes('2'):
-                            console.log("lol2")
-                            break;
-                        case arr.includes('3'):
-                            console.log("lol3")
-                            break;
-                        case arr.includes('4'):
-                            console.log("lol4")
-                            break;
-                        case arr.includes('5'):
-                            console.log("lol5")
-                            break;
-                        case arr.includes('6'):
-                            console.log("lol6")
-                            break;
-                        case arr.includes('7'):
-                            console.log("lol7")
-                            break;
-                        case arr.includes('8'):
-                            console.log("lol8")
-                            break;
-                        case arr.includes('9'):
-                            console.log("tied9")
-                            break;
-
-                        default:
-                            console.log("tied")
-
-                    }
-
-
-
-
-
-
                 }
             }
         }
     }
-
-
-
-
-
-
-
-
-
-
 }
 
